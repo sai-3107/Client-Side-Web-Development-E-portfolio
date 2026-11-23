@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DiaBD Diabetes Risk Centre | India</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0A2540;--mut:#566A7F;--bg:#fff;--tint:#EAF4F7;--line:#D6E2E9;--brand:#006D8F;--dk:#00506B;--grn:#2E8B6E;--low:#2A8A5C;--mod:#B8780A;--high:#C93C34;--r:12px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px;font-size:clamp(15px,.6vw + 9px,19px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 'Source Sans 3',system-ui,sans-serif}
+h1,h2,h3{font-family:'Source Serif 4',Georgia,serif;line-height:1.15;margin:0}
+a{color:var(--brand)}.wrap{max-width:1700px;margin:0 auto;padding:0 clamp(18px,3vw,56px)}
+.util{background:var(--ink);color:#fff;font-size:.82rem}.util .wrap{display:flex;gap:18px;align-items:center;min-height:36px;flex-wrap:wrap;justify-content:space-between}
+.util b{color:#ffb4ae}.util button{background:none;border:1px solid #ffffff55;color:#fff;border-radius:6px;padding:1px 8px;cursor:pointer;font:inherit}
+header.top{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:26px;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font:700 1.2rem 'Source Serif 4',serif;color:var(--ink);text-decoration:none;margin-right:auto}
+.logo span{display:block;font:600 .68rem 'Source Sans 3',system-ui,sans-serif;color:var(--mut);letter-spacing:.02em}
+.logo svg{flex:none}
+nav a,nav button.dd{color:var(--ink);text-decoration:none;font-weight:600;font-size:.95rem;background:none;border:0;cursor:pointer;font-family:inherit;padding:8px 2px}
+nav a:hover,nav button.dd:hover{color:var(--brand)}nav{display:flex;gap:22px;align-items:center}
+.menu{position:relative}.menu .sub{display:none;position:absolute;top:100%;left:-14px;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 12px 30px #0a254022;padding:10px;min-width:230px}
+.menu:hover .sub,.menu:focus-within .sub{display:block}.sub a{display:block;padding:8px 12px;border-radius:8px;font-weight:500}.sub a:hover{background:var(--tint)}
+.cta{background:var(--brand);color:#fff!important;padding:10px 18px!important;border-radius:99px;font-weight:700}.cta:hover{background:var(--dk)}
+@media(max-width:860px){nav a:not(.cta),nav .menu{display:none}}
+:focus-visible{outline:3px solid #f2b705;outline-offset:2px}
+.hero{background:linear-gradient(180deg,var(--tint),#fff);padding:40px 0 36px}.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}@media(max-width:1000px){.hero .wrap{grid-template-columns:1fr;gap:28px}}
+.hero h1{font-size:clamp(2rem,3.3vw,3rem);max-width:none;letter-spacing:-.015em}
+.hero p.l{font-size:1.15rem;color:var(--mut);max-width:54ch;margin:14px 0 22px}
+.search{display:flex;max-width:620px;border:2px solid var(--brand);border-radius:99px;background:#fff;overflow:hidden}
+.search input{flex:1;border:0;padding:14px 20px;font:inherit;background:none;color:var(--ink);min-width:0}.search button{border:0;background:var(--brand);color:#fff;font:700 1rem 'Source Sans 3',system-ui,sans-serif;padding:0 24px;cursor:pointer}
+.hint{color:var(--mut);font-size:.88rem;margin:10px 0 0}
+.tiles{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:16px}@media(max-width:560px){.tiles{grid-template-columns:1fr}}
+.tile{display:block;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;text-decoration:none;color:var(--ink);border-top:4px solid var(--c,var(--brand))}
+.tile:hover{box-shadow:0 8px 22px #0a254018}.tile h3{font-size:1.2rem;margin-bottom:4px}.tile p{margin:0;color:var(--mut);font-size:.93rem}
+.trust{background:var(--ink);color:#fff;padding:22px 0}.trust .wrap{display:grid;grid-template-columns:repeat(6,minmax(120px,1fr));gap:12px;overflow-x:auto}
+.trust div{font-size:.88rem;color:#b9cde0}.trust b{display:block;font:700 1.7rem 'Source Serif 4',serif;color:#fff}
+section.s{padding:48px 0 6px}.s h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin-bottom:8px}.lead{color:var(--mut);max-width:64ch;margin:0 0 26px}
+.path{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;counter-reset:p}
+.path div{padding:20px;background:var(--tint);border-radius:var(--r);counter-increment:p}.path div:before{content:counter(p);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;margin-bottom:10px}
+.path h3{font-size:1.15rem}.path p{margin:4px 0 0;color:var(--mut);font-size:.95rem}
+.main{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(18px,2vw,32px);align-items:start}#form{display:grid;gap:16px}#form fieldset{margin:0;padding:16px 20px 20px}#form .g{gap:12px 16px}#g1,#nums{grid-template-columns:repeat(4,minmax(0,1fr))}#bins{grid-template-columns:repeat(3,minmax(0,1fr))}@media(max-width:860px){#g1,#nums,#bins{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:1279px){.f label i:not(:has(.unit)){display:none}}@media(max-width:560px){#g1,#nums,#bins{grid-template-columns:1fr}}
+@media(max-width:860px){.rep{order:0;position:static!important}}
+fieldset{border:1px solid var(--line);border-radius:var(--r);padding:22px;margin:0 0 18px;min-width:0}
+legend{font:700 1.25rem 'Source Serif 4',serif;padding:0 8px;margin-left:-8px}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:560px){.g{grid-template-columns:1fr}}
+.f label,.q>span{display:flex;justify-content:space-between;align-items:center;gap:6px;min-height:30px;font-weight:600;font-size:.9rem;margin-bottom:4px;white-space:nowrap}.f label i{font-style:normal;color:var(--mut);font-weight:400;font-size:.8rem}
+input[type=text],input[type=email],input[type=number]{width:100%;padding:11px 12px;border:1px solid #b7c8d4;border-radius:8px;background:#fff;color:var(--ink);font:inherit}
+.bad{border-color:var(--high)!important}.al{color:var(--high);font-size:.82rem}
+.unit{border:1px solid var(--brand);color:var(--brand);background:#fff;border-radius:99px;font:600 .72rem 'Source Sans 3',system-ui,sans-serif;padding:2px 9px;cursor:pointer}.unit:hover{background:var(--tint)}
+.seg{display:flex;gap:6px}.seg label{flex:1;margin:0;text-align:center;padding:9px 6px;border:1px solid #b7c8d4;border-radius:8px;cursor:pointer;font-weight:600;background:#fff}
+.seg label:has(input:checked){background:var(--brand);border-color:var(--brand);color:#fff}.seg label:has(input:focus-visible){outline:3px solid #f2b705}.seg input{position:absolute;opacity:0}.seg.bad{outline:2px solid var(--high);outline-offset:3px}
+.btn{width:100%;padding:15px;border:0;border-radius:99px;background:var(--brand);color:#fff;font:700 1.05rem 'Source Sans 3',system-ui,sans-serif;cursor:pointer}.btn:hover{background:var(--dk)}
+.b2{border:1px solid var(--brand);background:#fff;color:var(--brand);border-radius:99px;padding:8px 16px;font:700 .88rem 'Source Sans 3',system-ui,sans-serif;cursor:pointer;text-decoration:none;display:inline-block}.b2:hover{background:var(--tint)}
+#err{display:none;margin:0 0 14px;padding:12px;border-radius:8px;background:#fdecea;color:var(--high);font-weight:600}
+.rep{position:static;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:0 10px 30px #0a254014}
+.rep header{background:var(--ink);color:#fff;padding:14px 22px;display:flex;justify-content:space-between;font-size:.88rem}.rep header b{font:700 1.05rem 'Source Serif 4',serif}
+.rb{padding:20px 22px}.prog{height:6px;background:var(--line);border-radius:3px;overflow:hidden}.prog u{display:block;height:100%;width:0;background:var(--grn);transition:width .3s}
+.risk-meter{padding:16px 18px;border:1px solid var(--line);border-radius:var(--r);background:#fff;margin:0 0 2px}
+.meter-heading{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}.meter-heading h3{font:700 1rem 'Source Sans 3',system-ui,sans-serif;margin-right:auto}
+.meter-heading strong{font:700 1.5rem/1 'Source Serif 4',serif}
+.meter{position:relative;margin:0 7px 8px;height:20px}
+.meter-track{position:absolute;top:5px;left:0;right:0;height:10px;border-radius:99px;overflow:hidden;background:linear-gradient(to right,#d4ece1 0 10%,#f8e9c8 10% 30%,#fbe1de 30% 100%)}
+.meter-track u{display:block;width:0;height:100%;border-radius:inherit;background:var(--c,var(--mut));transition:width .5s}
+.meter-marker{position:absolute;top:1px;left:0;width:18px;height:18px;border:3px solid var(--c,var(--mut));border-radius:50%;background:#fff;box-shadow:0 1px 5px #0a254055;transform:translateX(-50%);transition:left .5s}
+.meter-labels{display:flex;justify-content:space-between;gap:8px;color:var(--mut);font-size:.76rem}
+.meter-labels span:nth-child(2){text-align:center}.meter-labels span:last-child{text-align:right}
+.band{display:inline-block;margin:0;padding:3px 14px;border-radius:99px;font-weight:700;font-size:.85rem;color:#fff;background:var(--c,var(--mut))}
+.cap{color:var(--mut);font-size:.85rem;margin:12px 0 0}
+.dr{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}.dr h3{font:700 .92rem 'Source Sans 3',system-ui,sans-serif;margin-bottom:6px}.dr div{display:grid;grid-template-columns:112px 1fr 50px;gap:8px;align-items:center;font-size:.88rem;margin:5px 0}
+.dr .bar,.or .bar{height:9px;border-radius:5px;background:var(--line);position:relative;overflow:hidden}.dr .bar u{position:absolute;top:0;bottom:0}.dr em{font-style:normal;color:var(--mut);text-align:right;font-size:.8rem}
+#verdict{display:none;margin-top:14px;padding:14px;border-radius:8px;border-left:5px solid var(--c);background:var(--tint);font-size:.93rem}#verdict ul{margin:6px 0 0;padding-left:18px}#verdict .b2{margin-top:10px}
+.act{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.lib{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media(max-width:900px){.lib{grid-template-columns:1fr 1fr}}@media(max-width:560px){.lib{grid-template-columns:1fr}}.lib article{border:1px solid var(--line);border-radius:var(--r);padding:18px}.lib h3{font-size:1.1rem;margin-bottom:4px}.lib p{margin:0;color:var(--mut);font-size:.93rem}
+.tabs{display:flex;flex-direction:row;gap:0;border-bottom:1px solid var(--line);margin-bottom:24px;overflow-x:auto}.tabs button{flex:0 0 auto;width:auto;white-space:nowrap;text-align:center;border:0;border-bottom:2px solid transparent;background:none;padding:12px 16px;font:700 .95rem 'Source Sans 3',system-ui,sans-serif;color:var(--mut);cursor:pointer;margin:0}.tabs button[aria-selected=true]{color:var(--brand);border-bottom-color:var(--brand)}
+.pipe{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch}.pipe div{flex:1 1 150px;background:var(--tint);border-radius:10px;padding:14px;font-size:.88rem}.pipe b{display:block;font-size:.95rem;margin-bottom:3px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:22px}
+table{width:100%;border-collapse:collapse;font-size:.9rem}th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line)}th{background:var(--tint);color:var(--dk)}td.r{font-weight:700}.tw{overflow-x:auto}
+.card{border:1px solid var(--line);border-radius:var(--r);padding:20px}.card h3{font-size:1.15rem;margin-bottom:8px}.note{color:var(--mut);font-size:.83rem;margin:8px 0 0}
+.cm{display:grid;grid-template-columns:auto 1fr 1fr;gap:4px;font-size:.85rem;text-align:center;max-width:330px;margin-top:6px}.cm div{padding:9px 6px;border-radius:6px;background:var(--tint)}.cm .h{background:none;color:var(--mut);font-weight:600}.cm .k{background:#d4ece1}.cm .w{background:#fbe1de}
+.row{display:grid;grid-template-columns:104px 1fr 46px;gap:8px;align-items:center;font-size:.88rem;padding:3px 6px;border-radius:6px;margin:2px -6px}.row .bar{height:12px;background:var(--line);border-radius:3px;overflow:hidden}.row .bar u{display:block;height:100%;background:var(--brand);opacity:.5}
+.row.me{background:#fff3cd;font-weight:700}.row.me .bar u{opacity:1}.row em{font-style:normal;text-align:right}
+.or div{display:grid;grid-template-columns:150px 1fr 44px;gap:8px;align-items:center;font-size:.88rem;margin:6px 0}.or .bar{background:linear-gradient(90deg,var(--line) 45.4%,#7a8fa3 45.4%,#7a8fa3 46.4%,var(--line) 46.4%)}.or .bar u{display:block;height:100%}
+ul.tight{padding-left:18px;margin:0}ul.tight li{margin:6px 0}
+details{border-bottom:1px solid var(--line);padding:14px 0;break-inside:avoid}.fq{columns:2;column-gap:56px}@media(max-width:900px){.fq{columns:1}}summary{cursor:pointer;font:700 1.08rem 'Source Serif 4',serif}details p{color:var(--mut);margin:8px 0 0}
+.empty{padding:18px;border:1px dashed #9fb6c4;border-radius:var(--r);color:var(--mut)}
+footer{margin-top:70px;background:var(--ink);color:#b9cde0;padding:40px 0 30px;font-size:.9rem}footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}@media(max-width:700px){footer .wrap{grid-template-columns:1fr}}
+footer h3{color:#fff;font:700 1rem 'Source Sans 3',system-ui,sans-serif;margin-bottom:8px}footer a{color:#b9cde0;display:block;margin:4px 0}
+@media(max-width:1366px){
+ .util .wrap{align-items:flex-start;flex-direction:column;justify-content:center;gap:4px;padding-top:8px;padding-bottom:8px}
+ header.top .wrap{height:auto;align-items:stretch;flex-direction:column;gap:8px;padding-top:12px;padding-bottom:12px}
+ .logo{margin-right:0}
+ nav{align-items:center;flex-direction:row;flex-wrap:wrap;gap:2px 16px}
+ nav a,nav button.dd{display:inline-block;text-align:center;padding:8px 2px}
+ .menu .sub{position:absolute;margin:0;box-shadow:0 12px 30px #0a254022}
+ .hero .wrap,.main,footer .wrap{grid-template-columns:1fr;gap:24px}
+ .rep{order:0;position:static}
+ .tiles,.path,#nums,#bins,.g,.lib,.cols{grid-template-columns:1fr}
+ .pipe,.act{align-items:stretch;flex-direction:column}
+ .pipe div{flex:auto}
+ .search{max-width:none;flex-direction:column;border-radius:12px}
+ .search input{padding:12px 16px}
+ .search button{padding:12px}
+ .dr div{grid-template-columns:1fr}
+ .fq{columns:1}
+}
+#g1{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media print{.util,header.top,.hero,.trust,form,.act,section.s:not(#assess),footer{display:none!important}.main{display:block}.rep{position:static;box-shadow:none}}
+</style>
+
+<style id="mca-enhancements">
+:root{--shadow:0 18px 50px rgba(10,37,64,.10);--glass:#ffffffd9}
+body{overflow-x:hidden} .wrap{width:100%}
+.top .wrap{position:relative}.nav-tools{display:flex;gap:8px;align-items:center}
+.icon-btn{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:50px;padding:9px 13px;font:700 .85rem 'Source Sans 3',sans-serif;cursor:pointer}
+.icon-btn:hover{background:var(--tint)}
+.hero{position:relative;isolation:isolate;overflow:hidden}.hero .tiles{display:none}.hero:before{content:"";position:absolute;width:480px;height:480px;border-radius:50%;background:#b9e0e8;opacity:.25;right:-170px;top:-210px;z-index:-1}
+.hero-visual{position:relative;min-height:390px;border-radius:26px;overflow:hidden;box-shadow:var(--shadow);background:#dceef1}
+.hero-visual img{width:100%;height:100%;min-height:390px;object-fit:cover;display:block}
+.hero-visual:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#08283bd9)}
+.hero-caption{position:absolute;z-index:1;bottom:22px;left:24px;right:24px;color:white}.hero-caption b{display:block;font:700 1.4rem 'Source Serif 4',serif}.hero-caption span{font-size:.9rem;color:#e3f3f6}
+.student-strip{padding:24px 0;background:#f7fbfc;border-bottom:1px solid var(--line)}.student-strip .wrap{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.student-kicker{font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;color:var(--brand);font-weight:700}.student-strip h2{font-size:1.35rem;margin:3px 0}.student-strip p{margin:0;color:var(--mut);font-size:.9rem}.student-chip{padding:9px 14px;border:1px solid var(--line);background:#fff;border-radius:99px;font-size:.85rem;font-weight:700}
+.visual-section{padding:64px 0 20px}.visual-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.visual-card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;transition:transform .25s,box-shadow .25s}.visual-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.visual-card img{width:100%;height:190px;object-fit:cover;display:block}.visual-card .vc-body{padding:18px}.visual-card h3{font-size:1.15rem;margin-bottom:6px}.visual-card p{margin:0;color:var(--mut);font-size:.92rem}.vc-tag{display:inline-block;color:var(--brand);background:var(--tint);border-radius:99px;padding:4px 10px;font-size:.72rem;font-weight:700;margin-bottom:9px}
+.interactive-lab{margin:30px 0 8px;padding:26px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(135deg,#f0f8fa,#fff)}.lab-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}.lab-head h3{font-size:1.35rem}.lab-head p{color:var(--mut);margin:5px 0 0}.dataset-bars{display:grid;gap:14px;margin-top:20px}.dataset-row{display:grid;grid-template-columns:130px 1fr 70px;gap:12px;align-items:center;font-size:.9rem}.dataset-track{height:13px;background:#dce8ed;border-radius:99px;overflow:hidden}.dataset-track span{height:100%;display:block;border-radius:99px;background:linear-gradient(90deg,#006d8f,#48b5a0);width:0;transition:width 1s}.dataset-row strong{text-align:right}.lab-controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.lab-controls button{border:1px solid var(--brand);color:var(--brand);background:white;border-radius:99px;padding:8px 14px;font:700 .85rem inherit;cursor:pointer}.lab-controls button[aria-pressed=true]{background:var(--brand);color:white}.lab-detail{padding:14px 16px;border-left:4px solid var(--brand);background:white;border-radius:8px;margin-top:14px;color:var(--mut);min-height:58px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.reveal.visible{opacity:1;transform:none}
+.back-top{position:fixed;right:20px;bottom:20px;z-index:30;width:46px;height:46px;border:0;border-radius:50%;background:var(--brand);color:white;font-size:1.2rem;box-shadow:var(--shadow);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s}.back-top.show{opacity:1;pointer-events:auto}
+body.dark{--ink:#e9f2f7;--mut:#a8bdca;--bg:#0c1c28;--tint:#173544;--line:#294655;--brand:#55b9d1;--dk:#2b8da8;background:#0c1c28;color:var(--ink)}body.dark .top,body.dark .visual-card,body.dark .rep,body.dark fieldset,body.dark .risk-meter,body.dark .card,body.dark .student-chip,body.dark .icon-btn,body.dark .lab-detail,body.dark .lab-controls button{background:#102735;color:var(--ink)}body.dark .student-strip,body.dark .interactive-lab{background:#102735}body.dark input,body.dark .seg label{background:#102735;color:var(--ink);border-color:#426071}body.dark .tile{background:#102735;color:var(--ink)}body.dark .visual-card p{color:var(--mut)}body.dark .lab-controls button[aria-pressed=true]{background:var(--brand);color:#08202b}
+@media(max-width:900px){.visual-grid{grid-template-columns:1fr 1fr}.hero-visual,.hero-visual img{min-height:300px}}
+@media(max-width:600px){.visual-grid{grid-template-columns:1fr}.visual-card img{height:210px}.dataset-row{grid-template-columns:95px 1fr 55px;gap:7px;font-size:.82rem}.interactive-lab{padding:18px}.hero-visual,.hero-visual img{min-height:260px}}
+@media(prefers-reduced-motion:reduce){.reveal,.visual-card,.dataset-track span{transition:none}}
+</style>
+
+<style>#apiStatus{margin-top:-4px;font-weight:600}#apiStatus[data-ok="1"]{color:var(--low)}#apiStatus[data-ok="0"]{color:var(--mod)}</style>
+</head>
+<body>
+<div class="util"><div class="wrap"><span><b>Emergency?</b> Call 112, or 108 for an ambulance in most states. This site gives screening estimates only.</span><span>Text size <button type="button" data-fs="15" aria-label="Smaller text">A−</button> <button type="button" data-fs="17" aria-label="Normal text">A</button> <button type="button" data-fs="19" aria-label="Larger text">A+</button></span></div></div>
+<header class="top"><div class="wrap">
+ <a class="logo" href="#top"><svg width="34" height="34" viewBox="0 0 34 34"><rect width="34" height="34" rx="9" fill="#006D8F"/><path d="M6 18h6l3-8 4 15 3-7h6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div>DiaBD Diabetes Risk Centre<span>Diabetes screening for India</span></div></a>
+ <nav aria-label="Main"><a href="#assess">Risk check</a><a href="#library">Health library</a>
+  <div class="menu"><button class="dd" type="button" aria-haspopup="true">Research ▾</button><div class="sub"><a href="#research" data-tab="0">Methodology</a><a href="#research" data-tab="1">Model performance</a><a href="#research" data-tab="2">Dataset insights</a><a href="#research" data-tab="3">Limitations and ethics</a></div></div>
+  <a href="#faq">FAQ</a><a href="#history">My results</a><a class="cta" href="#assess">Check my risk</a><button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark mode">◐ Theme</button></nav>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+ <div><h1>Know your diabetes risk before symptoms start</h1>
+ <p class="l">About 101 million adults in India live with diabetes and 136 million have prediabetes (ICMR-INDIAB, 2023). Check your own risk in two minutes. Your answers stay in your browser.</p>
+ <form class="search" id="sf" role="search"><label for="q" style="position:absolute;left:-9999px">Search health topics</label><input id="q" type="search" placeholder="Search topics, e.g. glucose"><button type="submit">Search</button></form>
+ <p class="hint">Search the health library below, or start with one of the options on the right.</p><p class="hint" style="max-width:620px;margin-top:14px"><strong>Please note:</strong> the model learned from patient records in Bangladesh and has not been validated on Indian patients, so treat it as a first screen.</p></div>
+ <div class="tiles">
+  <a class="tile" href="#assess"><h3>Check my risk</h3><p>Fourteen inputs, live results, a printable report.</p></a>
+  <a class="tile" style="--c:var(--grn)" href="https://www.google.com/maps/search/hospitals+near+me" target="_blank" rel="noopener"><h3>Find a hospital</h3><p>Opens a map search near your location.</p></a>
+  <a class="tile" style="--c:#5b6cc9" href="#library"><h3>Learn about diabetes</h3><p>Plain-language topics on risk, tests and habits.</p></a>
+  <a class="tile" style="--c:#c98a1b" href="#research"><h3>See the research</h3><p>Method, metrics, odds ratios and limitations.</p></a>
+ </div>
+</div></section>
+
+<div class="trust"><div class="wrap"><div><b>5,288</b>patient records</div><div><b>14</b>health inputs</div><div><b>0.83</b>AUC on held-out test data</div><div><b>0.86</b>AUC, 5-fold cross-validation</div><div><b>6.5%</b>diabetic in the training data</div><div><b>11.4%</b>of Indian adults (ICMR-INDIAB)</div></div></div>
+
+ <section class="visual-section"><div class="wrap"><h2>Explore the project</h2><p class="lead">A visual guide to the problem, the data and the model workflow.</p><div class="visual-grid">
+  <article class="visual-card reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=900&q=80" alt="Doctor discussing health with a patient"><div class="vc-body"><span class="vc-tag">THE CHALLENGE</span><h3>Why early screening matters</h3><p>Diabetes can remain unnoticed for years. This project explores whether routine health indicators can help identify patterns that deserve clinical follow-up.</p></div></article>
+  <article class="visual-card reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=900&q=80" alt="Medical research data displayed on a computer"><div class="vc-body"><span class="vc-tag">THE DATA</span><h3>14 health-related features</h3><p>The DiaBD dataset contains demographic, measurement and health-history fields, with a binary diabetes outcome.</p></div></article>
+  <article class="visual-card reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=900&q=80" alt="Researcher examining data visualisations"><div class="vc-body"><span class="vc-tag">THE APPROACH</span><h3>Compare machine-learning models</h3><p>Logistic regression, feature selection and a neural network are explored in the accompanying research notebook.</p></div></article>
+ </div>
+ <div class="interactive-lab reveal" id="datasetLab"><div class="lab-head"><div><span class="student-kicker">Interactive dataset snapshot</span><h3>What is inside the dataset?</h3><p>Explore the class balance using the actual CSV supplied with this project.</p></div><span class="student-chip">5,288 records · 14 input features</span></div>
+  <div class="dataset-bars"><div class="dataset-row"><span>Non-diabetic</span><div class="dataset-track"><span data-width="93.53"></span></div><strong>4,946</strong></div><div class="dataset-row"><span>Diabetic</span><div class="dataset-track"><span data-width="6.47"></span></div><strong>342</strong></div></div>
+  <div class="lab-controls" aria-label="Dataset insight selector"><button type="button" data-insight="balance" aria-pressed="true">Class balance</button><button type="button" data-insight="features" aria-pressed="false">Features</button><button type="button" data-insight="workflow" aria-pressed="false">Model workflow</button></div>
+  <div class="lab-detail" id="labDetail" aria-live="polite">The dataset is imbalanced: approximately 6.5% of records are labelled diabetic. This is why accuracy alone is not enough to judge a screening model.</div>
+ </div></div></section>
+ <section class="s"><div class="wrap">
+<h2>How the screening works</h2><p class="lead">Three steps, designed to end with something you can take to a doctor.</p>
+ <div class="path"><div><h3>Screen</h3><p>Enter your readings. The model compares you with the dataset and estimates the probability of diabetes.</p></div><div><h3>Understand</h3><p>See which inputs raised or lowered your estimate, and how people like you appear in the data.</p></div><div><h3>Act</h3><p>Get next steps for your risk band, print the report, and find a hospital if your risk is high.</p></div></div>
+</div></section>
+
+<section class="s" id="assess"><div class="wrap">
+ <h2>Diabetes risk assessment</h2><p class="lead">Takes about two minutes. The report below updates as you type.</p>
+ <div class="main">
+ <form id="form" novalidate>
+  <div id="err" role="alert"></div>
+  <fieldset><legend>1. About you</legend><div class="g" id="g1">
+   <div class="f"><label for="userName">Name</label><input type="text" id="userName" maxlength="50" placeholder="e.g. Alex" autocomplete="name"><div class="al" id="al-userName"></div></div>
+   <div class="f"><label for="userEmail">Email</label><input type="email" id="userEmail" maxlength="100" placeholder="you@gmail.com" autocomplete="email"><div class="al" id="al-userEmail"></div></div>
+   <div class="f"><label for="predictionTitle">Report title <i>optional</i></label><input type="text" id="predictionTitle" maxlength="50" placeholder="e.g. Checkup"></div>
+   <div class="f"><label for="locationInput">PIN or city <i>optional · helps find nearby hospitals</i></label><input type="text" id="locationInput" maxlength="100" placeholder="e.g. Pune"></div></div></fieldset>
+  <fieldset><legend>2. Measurements</legend><div class="g" id="nums"></div></fieldset>
+  <fieldset><legend>3. Health history</legend><div class="g" id="bins"></div></fieldset>
+  <section class="risk-meter" aria-label="Your estimated diabetes risk">
+   <div class="meter-heading"><h3>Your estimated diabetes risk</h3><strong id="pct">–</strong><span class="band" id="band">Waiting for input</span></div>
+   <div class="meter" role="progressbar" aria-label="Estimated diabetes risk" aria-valuemin="0" aria-valuemax="100"><div class="meter-track"><u id="arc"></u></div><span class="meter-marker" id="meterMarker" aria-hidden="true"></span></div>
+   <div class="meter-labels" aria-hidden="true"><span>Low · 0–35%</span><span>Moderate · 35–70%</span><span>High · 70%+</span></div>
+  </section>
+  <button class="btn" type="submit">Save my report</button>
+ </form>
+ <aside class="rep" aria-live="polite">
+  <header><b>Risk report</b><span id="today"></span></header>
+  <div class="rb">
+   <div class="prog" aria-hidden="true"><u id="prog"></u></div>
+   <p class="cap" id="cap">Fill in any field to see an estimate.</p><p class="cap" id="apiStatus" aria-live="polite"></p>
+   <div class="dr" id="drivers" hidden><h3>What moves your estimate most</h3><div id="drl"></div></div>
+   <div id="verdict"></div>
+   <div class="act"><button class="b2" type="button" onclick="window.print()">Print report</button><button class="b2" type="button" id="reset">Clear form</button></div>
+  </div>
+ </aside>
+ </div>
+</div></section>
+
+<section class="s" id="library"><div class="wrap">
+ <h2>Health library</h2><p class="lead" id="libn">Plain-language topics. General information only, not personal medical advice.</p>
+ <div class="lib" id="lib"></div>
+</div></section>
+
+<section class="s" id="research"><div class="wrap">
+ <h2>Research centre</h2><p class="lead">How the model was built, how well it performs, and where it should not be trusted. All figures come from the project notebook and the DiaBD CSV.</p>
+ <div class="tabs" role="tablist"><button role="tab" aria-selected="true">Methodology</button><button role="tab" aria-selected="false">Model performance</button><button role="tab" aria-selected="false">Dataset insights</button><button role="tab" aria-selected="false">Limitations and ethics</button></div>
+
+ <div class="tp">
+  <div class="pipe"><div><b>Data</b>5,288 records, 14 features, binary target (6.5% diabetic)</div><div><b>Cleaning</b>Gender encoded 0/1. Zeros in six physiological columns replaced by the column mean (one glucose value changed)</div><div><b>Split</b>80/20 stratified, seed 42: 4,230 train, 1,058 test</div><div><b>Scaling</b>StandardScaler fitted on training data only</div><div><b>Models</b>Logistic regression, RFE (8 features), LassoCV, neural network (32-16-1)</div><div><b>Deployed</b>14-feature logistic regression, running in your browser</div></div>
+  <div class="cols"><div class="card"><h3>Why logistic regression</h3><p>All three models reach 93.5% to 93.7% accuracy, so the simplest one wins: its coefficients are readable, it runs without a server, and each prediction can be explained input by input.</p></div><div class="card"><h3>Feature selection</h3><p>RFE kept age, pulse rate, diastolic BP, glucose, weight, family diabetes, hypertension and family hypertension. LassoCV gave non-zero weight only to hypertension, glucose, weight, cardiovascular disease, diastolic BP and pulse rate.</p></div></div>
+ </div>
+
+ <div class="tp" hidden>
+  <div class="tw"><table><thead><tr><th>Model</th><th>Accuracy</th><th>Precision (diabetic)</th><th>Recall (diabetic)</th></tr></thead><tbody>
+   <tr><td class="r">Logistic regression, 14 features</td><td>93.57%</td><td>0.50</td><td>0.13</td></tr><tr><td>Logistic regression, RFE 8 features</td><td>93.48%</td><td>0.47</td><td>0.12</td></tr><tr><td>Neural network 32-16-1</td><td>93.67%</td><td>0.53</td><td>0.13</td></tr></tbody></table></div>
+  <p class="note">At the default 50% cutoff the models rarely call anyone diabetic. Accuracy is high mainly because 93.5% of the test set is non-diabetic.</p>
+  <div class="cols">
+   <div class="card"><h3>ROC curve (test set)</h3><svg viewBox="0 0 250 250" id="roc" style="width:100%;max-width:300px" role="img" aria-label="ROC curve with AUC 0.83"></svg><p class="note">AUC 0.827 on the test set. 5-fold cross-validated AUC 0.863 (SD 0.025). Brier score 0.052.</p></div>
+   <div class="card"><h3>Confusion matrices (1,058 test records)</h3><b>At 50% cutoff</b><div class="cm"><div class="h"></div><div class="h">Predicted no</div><div class="h">Predicted yes</div><div class="h">Actual no</div><div class="k">981</div><div>9</div><div class="h">Actual yes</div><div class="w">59</div><div class="k">9</div></div>
+    <p class="note">Sensitivity 13%, specificity 99%.</p><b>At 10% cutoff (lower screening threshold)</b><div class="cm"><div class="h"></div><div class="h">Predicted no</div><div class="h">Predicted yes</div><div class="h">Actual no</div><div class="k">886</div><div>104</div><div class="h">Actual yes</div><div class="w">30</div><div class="k">38</div></div>
+    <p class="note">Sensitivity 56%, specificity 89.5%. Lowering the cutoff catches more cases at the cost of more false alarms, which suits screening.</p></div>
+   <div class="card"><h3>Odds ratio per 1 SD increase</h3><div class="or" id="or"></div><p class="note">Above the grey line raises the odds, below lowers them. For yes/no inputs, 1 SD is about 0.18 to 0.32.</p></div>
+  </div>
+ </div>
+
+ <div class="tp" hidden><p class="lead">Share of people with diabetes in each group. If you have entered a value in the risk check, your group is highlighted.</p><div class="cols" id="charts" style="margin-top:0"></div></div>
+
+ <div class="tp" hidden><div class="cols" style="margin-top:0">
+  <div class="card"><h3>Limitations</h3><ul class="tight"><li>Trained on Bangladesh records and not validated on Indian patients. India’s diabetes prevalence (11.4%) is higher than this dataset’s 6.5%, so absolute probabilities may be understated for Indian users.</li><li>Only 342 diabetic cases, so subgroup estimates (stroke, heart disease) are very uncertain.</li><li>Family diabetes shows a negative association, which is probably a data collection artefact and not biology.</li><li>Associations are not causes. The model predicts who looks like past diabetic patients.</li><li>Modest discrimination (AUC 0.83). It will miss some cases and flag some healthy people.</li></ul></div>
+  <div class="card"><h3>Ethics and privacy</h3><ul class="tight"><li>Estimates run in your browser. Nothing is sent to a server.</li><li>Saved reports live in this browser’s local storage and can be cleared at any time.</li><li>The tool supports a conversation with a doctor. It does not diagnose or advise treatment.</li><li>Risk bands used in this project: low under 35%, moderate 35% to under 70%, and high 70% or more.</li></ul></div></div></div>
+</div></section>
+
+<section class="s" id="faq"><div class="wrap">
+ <h2>Frequently asked questions</h2><p class="lead">Short answers to what people ask first.</p><div class="fq">
+ <details><summary>Is this a diagnosis?</summary><p>No. It estimates how closely your numbers resemble people with diabetes in the dataset. Only a blood test ordered by a clinician can diagnose diabetes.</p></details>
+ <details><summary>What glucose value should I enter?</summary><p>Use your most recent blood glucose reading. Indian labs usually report mg/dL, which is the default here. The model works in mmol/L internally, and you can switch units at any time.</p></details>
+ <details><summary>My result is low but I feel unwell. What now?</summary><p>See a doctor. The model misses a large share of cases, and symptoms matter more than any estimate.</p></details>
+ <details><summary>Was this trained on Indian data?</summary><p>No. It was trained on the DiaBD dataset from Bangladesh. South Asian populations share many risk patterns, but the model has not been tested on Indian patients. Use it as a prompt to get tested, not as a verdict.</p></details>
+ <details><summary>Where does my data go?</summary><p>Nowhere. The calculation runs on your device, and saved reports are stored only in your browser.</p></details>
+ <details><summary>Why can my result differ from another tool?</summary><p>Tools are trained on different populations. This one learned from Bangladeshi patient records, so it may not transfer to other groups.</p></details></div>
+</div></section>
+
+<section class="s" id="history"><div class="wrap">
+ <h2>My saved reports</h2><p class="lead">Stored only in this browser. The ten most recent are kept.</p>
+ <div id="hist" class="tw"></div>
+ <div class="act" id="histAct"><button class="b2" id="exp" type="button">Download CSV</button><button class="b2" id="clr" type="button">Clear history</button></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><div><h3>DiaBD Diabetes Risk Centre</h3>An academic machine learning project for Indian users, built on the DiaBD dataset from Bangladesh. For education and preliminary screening only. It does not replace professional medical advice.</div><div><h3>Explore</h3><a href="#assess">Risk check</a><a href="#library">Health library</a><a href="#research">Research centre</a><a href="#faq">FAQ</a></div><div><h3>If you need help now</h3>Call 112 (national emergency) or 108 (ambulance in most states).</div></div></footer>
+
+<script>
+const M={f:["age","gender","pulse_rate","systolic_bp","diastolic_bp","glucose","height","weight","bmi","family_diabetes","hypertensive","family_hypertension","cardiovascular_disease","stroke"],
+c:[0.1439,0.0703,0.1365,0.0592,0.2133,0.6572,0.0079,0.307,-0.0029,-0.4294,0.7235,0.363,0.0701,-0.0275],b:-3.4825,
+m:[45.8303,0.2913,76.6501,134.318,82.3255,7.5798,1.5492,53.747,22.3982,0.0319,0.1137,0.034,0.0102,0.0038],
+s:[13.3803,0.4543,12.2994,22.1407,12.384,2.9383,0.0782,9.9581,4.4807,0.1758,0.3175,0.1813,0.1003,0.0614]};
+const NUM=[["age","Age","yrs",18,120,1,"50"],["glucose","Glucose","",1,630,1,"135"],["pulse_rate","Pulse rate","/min",30,150,1,"76"],["systolic_bp","Systolic BP","mm Hg",60,250,1,"125"],["diastolic_bp","Diastolic BP","mm Hg",10,130,1,"82"],["height","Height","cm",50,250,1,"165"],["weight","Weight","kg",10,200,.1,"70"],["bmi","BMI","auto",10,80,.01,"22.8"]];
+const BIN=[["gender","Gender",[["Female",0],["Male",1]]],["family_diabetes","Family diabetes"],["hypertensive","Hypertension"],["family_hypertension","Family hypertension"],["cardiovascular_disease","Heart disease"],["stroke","Stroke history"]];
+const BF=BIN.map(b=>b[0]);
+const LBL={age:"Age",gender:"Gender",pulse_rate:"Pulse",systolic_bp:"Systolic BP",diastolic_bp:"Diastolic BP",glucose:"Glucose",height:"Height",weight:"Weight",bmi:"BMI",family_diabetes:"Family diabetes",hypertensive:"Hypertension",family_hypertension:"Family hypertension",cardiovascular_disease:"Heart disease",stroke:"Stroke"};
+const $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let unit="mgdl";const band=p=>p>=70?["High","var(--high)"]:p>=35?["Moderate","var(--mod)"]:["Low","var(--low)"];
+$("today").textContent=new Date().toLocaleDateString("en-GB",{dateStyle:"medium"});
+
+// form
+$("nums").innerHTML=NUM.map(([id,l,u,mn,mx,st,ph])=>`<div class="f"><label for="${id}">${l} <i>${id=="glucose"?'<button type="button" class="unit" aria-label="Switch glucose unit">mg/dL ⇄</button>':u}</i></label><input type="number" id="${id}" min="${mn}" max="${mx}" step="${st}" placeholder="${ph}${id=="glucose"?" mg/dL":(u&&id!="bmi"?" "+u:"")}" inputmode="decimal"><div class="al" id="al-${id}"></div></div>`).join("");
+$("bins").innerHTML=BIN.map(([id,l,o])=>`<div class="q" id="g-${id}"><span>${l}</span><div class="seg">${(o||[["Yes",1],["No",0]]).map(([t,v])=>`<label><input type="radio" name="${id}" value="${v}">${t}</label>`).join("")}</div></div>`).join("");
+
+// ---- API integration ----
+// "" = same server that served this page (python backend). When the file is opened
+// directly (file://) or hosted elsewhere, point this at your API, e.g. "https://your-api.example.com".
+const API_BASE=location.protocol==="file:"?"http://localhost:8000":"";
+let apiSeq=0,apiTimer;
+const setStatus=(ok,msg)=>{const s=$("apiStatus");s.dataset.ok=ok;s.textContent=msg};
+function payload(){const o={};M.f.forEach(f=>{let x;if(BF.includes(f)){const r=document.querySelector(`input[name="${f}"]:checked`);x=r?+r.value:NaN}else{x=parseFloat($(f).value);if(f=="glucose"&&unit=="mgdl")x/=18.016;if(f=="height")x/=100}o[f]=isNaN(x)?null:x});return o}
+async function callApi(body){try{const r=await fetch(API_BASE+"/api/predict",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});if(!r.ok)throw new Error("HTTP "+r.status);const d=await r.json();setStatus("1","● Live estimate from the model API");return d}catch(e){setStatus("0","○ Offline estimate calculated in your browser");return null}}
+const adapt=d=>({p:d.risk_percent,t:M.f.map(f=>d.contributions.find(c=>c.feature===f).contribution)});
+function sync(){clearTimeout(apiTimer);const seq=++apiSeq;if(vals().miss===14){setStatus("","");return}
+ apiTimer=setTimeout(async()=>{const d=await callApi(payload());if(seq===apiSeq&&d)render(adapt(d))},350)}
+
+// model
+function vals(){let miss=0;const v=M.f.map((f,i)=>{let x;if(BF.includes(f)){const r=document.querySelector(`input[name="${f}"]:checked`);x=r?+r.value:NaN}else{x=parseFloat($(f).value);if(f=="glucose"&&unit=="mgdl")x/=18.016;if(f=="height")x/=100}
+ if(isNaN(x)){miss++;x=M.m[i]}return x});return{v,miss}}
+function predict(v){let z=M.b;const t=v.map((x,i)=>{const k=M.c[i]*(x-M.m[i])/M.s[i];z+=k;return k});return{p:100/(1+Math.exp(-z)),t}}
+function render(res){const{v,miss}=vals(),n=14-miss,{p,t}=res||predict(v),el=document.querySelector(".rep"),meter=document.querySelector(".risk-meter");$("prog").style.width=n/14*100+"%";
+ if(!n){$("pct").textContent="–";$("band").textContent="Waiting for input";el.style.removeProperty("--c");meter.style.removeProperty("--c");$("arc").style.width="0";$("meterMarker").style.left="0";$("arc").parentElement.parentElement.removeAttribute("aria-valuenow");$("arc").parentElement.parentElement.removeAttribute("aria-valuetext");$("cap").textContent="Fill in any field to see an estimate.";$("drivers").hidden=true;mark(v,0);return null}
+ const[b,c]=band(p);el.style.setProperty("--c",c);meter.style.setProperty("--c",c);$("pct").textContent=p.toFixed(1)+"%";$("band").textContent=b+" risk";$("arc").style.width=`${Math.min(p,100)}%`;$("meterMarker").style.left=`${Math.min(p,100)}%`;$("arc").parentElement.parentElement.setAttribute("aria-valuenow",p.toFixed(1));$("arc").parentElement.parentElement.setAttribute("aria-valuetext",`${p.toFixed(1)}% ${b} risk`);
+ $("cap").textContent=n<14?`${n} of 14 inputs entered. Empty fields use the dataset average, so the estimate firms up as you add more.`:"Based on all 14 inputs.";
+ const top=t.map((k,i)=>[M.f[i],k]).sort((a,b)=>Math.abs(b[1])-Math.abs(a[1])).filter(x=>Math.abs(x[1])>.005).slice(0,4),mx=Math.max(...top.map(x=>Math.abs(x[1])),.3);
+ $("drl").innerHTML=top.map(([f,k])=>`<div><span>${LBL[f]}</span><span class="bar"><u style="${k>0?"left:50%":"right:50%"};width:${Math.abs(k)/mx*50}%;background:${k>0?"var(--high)":"var(--low)"}"></u></span><em>${k>0?"raises":"lowers"}</em></div>`).join("");
+ $("drivers").hidden=false;mark(v,n);return p}
+function mark(v,n){document.querySelectorAll(".row[data-k]").forEach(r=>{const k=r.dataset.k,x=n&&!isNaN(parseFloat($(k).value))?v[M.f.indexOf(k)]:null;r.classList.toggle("me",x!=null&&x>+r.dataset.lo&&x<=+r.dataset.hi)})}
+$("form").addEventListener("input",e=>{const t=e.target;$("verdict").style.display="none";
+ if(t.id=="height"||t.id=="weight"){const h=+$("height").value,w=+$("weight").value;if(h>=50&&w>=10)$("bmi").value=(w*1e4/h/h).toFixed(2)}
+ if(t.type=="number")check(t);if(t.id=="userName")t.value=t.value.replace(/[0-9]/g,"");render();sync()});
+document.querySelector(".unit").addEventListener("click",e=>{const u=unit=="mgdl"?"mmol":"mgdl",g=$("glucose"),x=parseFloat(g.value);unit=u;e.currentTarget.textContent=u=="mgdl"?"mg/dL ⇄":"mmol/L ⇄";
+ 
+ if(u=="mgdl"){g.min=1;g.max=630;g.step=1;g.placeholder="135 mg/dL";if(!isNaN(x))g.value=Math.round(x*18.016)}else{g.min=.01;g.max=35;g.step=.01;g.placeholder="7.5 mmol/L";if(!isNaN(x))g.value=(x/18.016).toFixed(2)}render();sync()});
+function check(el){const x=parseFloat(el.value),ok=el.value===""||(x>=+el.min&&x<=+el.max);el.classList.toggle("bad",!ok);$("al-"+el.id).textContent=ok?"":`Enter a value between ${el.min} and ${el.max}.`;return ok&&el.value!==""}
+const emailOk=show=>{const v=$("userEmail").value.trim(),ok=/^.+@(gmail\.com|zohomail\.in)$/i.test(v);$("userEmail").classList.toggle("bad",!!v&&!ok);$("al-userEmail").textContent=show&&v&&!ok?"Only @gmail.com and @zohomail.in addresses are accepted.":"";return ok};
+$("userEmail").addEventListener("input",()=>emailOk(true));
+
+// save
+const KEY="diabetesPredictionHistoryDiaBD";
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||[]}catch(e){return[]}}
+$("form").addEventListener("submit",async e=>{e.preventDefault();const bad=[];
+ const nm=$("userName");nm.classList.toggle("bad",!nm.value.trim());if(!nm.value.trim())bad.push(nm);
+ if(!emailOk(true))bad.push($("userEmail"));
+ NUM.forEach(([id])=>{if(!check($(id))){$(id).classList.add("bad");bad.push($(id))}});
+ BIN.forEach(([id])=>{const ok=!!document.querySelector(`input[name="${id}"]:checked`);document.querySelector(`#g-${id} .seg`).classList.toggle("bad",!ok);if(!ok)bad.push(document.querySelector(`#g-${id} input`))});
+ const er=$("err");if(bad.length){er.style.display="block";er.textContent="Some fields need attention. They are outlined in red.";bad[0].scrollIntoView({block:"center",behavior:"smooth"});bad[0].focus({preventScroll:true});return}
+ er.style.display="none";const api=await callApi(payload()),p=render(api?adapt(api):undefined),[b,c]=band(p),title=$("predictionTitle").value.trim()||"Risk report",loc=$("locationInput").value.trim(),vv=vals().v,inputs={};M.f.forEach((f,i)=>inputs[f]=vv[i]);
+  const hospitalQuery=loc?`Hospitals near ${loc}`:"Hospitals near me";
+  const hospitalLink=`<br><p style="margin:10px 0 8px">Use this link to locate nearby hospitals. If you entered a city or PIN code, the search will use that location.</p><a class="b2" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(hospitalQuery)}">Find ${loc?`hospitals near ${esc(loc)}`:"nearest hospitals"}</a>`;
+  const adv=b=="High"?`<strong>High risk.</strong> Please arrange a health screening soon and share this report with your doctor.${hospitalLink}`:b=="Moderate"?`<strong>Moderate risk.</strong> Small changes help:<ul><li>Cut back on sugary drinks and processed food.</li><li>Move for 30 minutes most days.</li><li>Book a routine checkup and ask about a blood sugar test.</li></ul>`:`<strong>Low risk.</strong> Keep up healthy habits and routine checkups.`;
+ const vd=$("verdict");vd.innerHTML=`${esc(title)} for ${esc(nm.value.trim())}: ${p.toFixed(2)}%<br>${adv}`;vd.style.setProperty("--c",c);vd.style.display="block";
+ const h=load();h.unshift({date:new Date().toLocaleString("en-GB",{dateStyle:"medium",timeStyle:"short"}),title,risk:p,inputs});h.length=Math.min(h.length,10);
+ try{localStorage.setItem(KEY,JSON.stringify(h))}catch(x){}histR()});
+$("reset").onclick=()=>{$("form").reset();document.querySelectorAll(".bad").forEach(x=>x.classList.remove("bad"));document.querySelectorAll(".al").forEach(x=>x.textContent="");$("err").style.display="none";$("verdict").style.display="none";render();sync()};
+function histR(){const h=load();$("histAct").style.display=h.length?"flex":"none";
+ $("hist").innerHTML=h.length?`<table><thead><tr><th>Date</th><th>Report</th><th>Risk</th><th>Band</th></tr></thead><tbody>${h.map(i=>{const[b,c]=band(i.risk);return`<tr><td>${esc(i.date)}</td><td>${esc(i.title)}</td><td class="r">${i.risk.toFixed(2)}%</td><td style="color:${c};font-weight:700">${b}</td></tr>`}).join("")}</tbody></table>`:`<div class="empty">No saved reports yet. Complete the risk check and choose “Save my report”.</div>`}
+$("clr").onclick=()=>{try{localStorage.removeItem(KEY)}catch(e){}histR()};
+$("exp").onclick=()=>{const q=s=>`"${String(s).replace(/"/g,'""')}"`,csv=[["date","title","risk_percent",...M.f].join(","),...load().map(i=>[q(i.date),q(i.title),i.risk.toFixed(2),...M.f.map(f=>i.inputs&&i.inputs[f]!=null?i.inputs[f]:"")].join(","))].join("\n"),a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));a.download="diabetes-risk-reports.csv";a.click()};
+
+// library + search
+const LIB=[["Type 2 diabetes basics","How the body handles glucose, and why high levels over many years can damage nerves, eyes, kidneys and the heart."],["Glucose and HbA1c tests","Blood tests clinicians use to screen for diabetes, and why a single reading is not enough."],["Hypertension and diabetes","They often occur together and share risk factors. Having both raises heart and kidney risk."],["Weight and BMI","For Asian Indians, overweight starts at a BMI of 23 and obesity at 25. Indians tend to develop diabetes at lower weights than Western populations."],["Eating for steady blood sugar","Swap some polished rice and maida for millets, whole grains, dal and vegetables. Cut back on sugary drinks and sweets."],["Moving more","About 150 minutes of moderate activity a week, built up gradually."],["Family history","What a relative’s diabetes does and does not tell you about your own risk."],["Screening in India","Ask your doctor for a fasting glucose or HbA1c test, especially with a family history or a high BMI. Do not wait for symptoms."],["Warning signs","Strong thirst, frequent urination, tiredness, blurred vision, slow healing. Many people have no symptoms at all."]];
+function lib(q=""){q=q.toLowerCase().trim();const r=LIB.filter(([t,d])=>!q||(t+d).toLowerCase().includes(q));
+ $("lib").innerHTML=r.length?r.map(([t,d])=>`<article><h3>${t}</h3><p>${d}</p></article>`).join(""):`<div class="empty">No topics match “${esc(q)}”. Try “glucose”, “weight” or “family”.</div>`;
+ $("libn").textContent=q?`${r.length} topic${r.length==1?"":"s"} found. General information only, not personal medical advice.`:"Plain-language topics. General information only, not personal medical advice."}
+$("sf").addEventListener("submit",e=>{e.preventDefault();lib($("q").value);$("library").scrollIntoView()});$("q").addEventListener("input",()=>lib($("q").value));
+
+// research tabs
+const tabs=[...document.querySelectorAll(".tabs button")],tps=[...document.querySelectorAll(".tp")];
+const tab=i=>{tabs.forEach((b,j)=>b.setAttribute("aria-selected",i==j));tps.forEach((p,j)=>p.hidden=i!=j)};
+tabs.forEach((b,i)=>b.onclick=()=>tab(i));document.querySelectorAll("[data-tab]").forEach(a=>a.addEventListener("click",()=>tab(+a.dataset.tab)));
+document.querySelectorAll("[data-fs]").forEach(b=>b.onclick=()=>document.documentElement.style.fontSize=b.dataset.fs+"px");
+
+// ROC (test set, 16 sampled points)
+const R=[[0,0],[.006,.074],[.011,.162],[.022,.25],[.04,.338],[.06,.426],[.071,.515],[.107,.559],[.129,.618],[.163,.676],[.244,.735],[.311,.779],[.365,.838],[.435,.897],[.671,.941],[1,1]],X=x=>30+x*200,Y=y=>220-y*200;
+$("roc").innerHTML=`<rect x="30" y="20" width="200" height="200" fill="none" stroke="var(--line)"/><line x1="30" y1="220" x2="230" y2="20" stroke="#9fb6c4" stroke-dasharray="4"/><path d="M${R.map(([a,b])=>X(a)+" "+Y(b)).join("L")}" fill="none" stroke="var(--brand)" stroke-width="3"/><text x="130" y="244" text-anchor="middle" font-size="11" fill="var(--mut)">False positive rate</text><text x="10" y="120" font-size="11" fill="var(--mut)" transform="rotate(-90 10 120)" text-anchor="middle">True positive rate</text>`;
+// odds ratios
+$("or").innerHTML=[["Hypertension",2.06],["Glucose",1.93],["Family hypertension",1.44],["Weight",1.36],["Diastolic BP",1.24],["Age",1.15],["Pulse rate",1.15],["Family diabetes",.65]].map(([l,o])=>`<div><span>${l}</span><span class="bar"><u style="width:${o/2.2*100}%;background:${o>1?"var(--high)":"var(--low)"};opacity:.8"></u></span><em style="font-style:normal;text-align:right">${o}</em></div>`).join("");
+// insights (from the CSV)
+const CH=[["By age","age",[["Up to 30",2.1,818,0,30],["31–40",4.6,1506,30,40],["41–50",7.3,1205,40,50],["51–60",10.2,1025,50,60],["Over 60",8.6,734,60,999]]],
+["By glucose (mg/dL)","glucose",[["Up to 100",4.9,804,0,5.6],["101–124",2.3,1807,5.6,6.9],["125–160",3.8,1751,6.9,8.9],["161–198",10.7,535,8.9,11],["Above 198",35,391,11,999]]],
+["By BMI","bmi",[["Up to 18.5",3,805,0,18.5],["18.6–25",6,3389,18.5,25],["25.1–30",10.8,853,25,30],["Over 30",10,239,30,999]]],
+["By condition",null,[["Hypertension",31.3,601],["No hypertension",3.4,4687],["Heart disease",28.3,54],["Stroke",20,20]]]];
+$("charts").innerHTML=CH.map(([t,k,r])=>`<div class="card"><h3>${t}</h3>${r.map(([l,v,n,lo,hi])=>`<div class="row" ${k?`data-k="${k}" data-lo="${lo}" data-hi="${hi}"`:""}><span>${l}</span><span class="bar"><u style="width:${v/40*100}%"></u></span><em>${v}%</em></div>`).join("")}<p class="note">Group sizes: ${r.map(x=>x[2].toLocaleString()).join(", ")}.</p></div>`).join("");
+
+lib();histR();render();
+</script>
+
+<script id="mca-interactions">
+(()=>{
+ const $=id=>document.getElementById(id);
+ const theme=$('themeToggle');
+ if(theme){theme.addEventListener('click',()=>{document.body.classList.toggle('dark');const on=document.body.classList.contains('dark');theme.textContent=on?'☀ Light':'◐ Theme';try{localStorage.setItem('diabd-theme',on?'dark':'light')}catch(e){}});try{if(localStorage.getItem('diabd-theme')==='dark'){document.body.classList.add('dark');theme.textContent='☀ Light'}}catch(e){}}
+ const detail=$('labDetail');
+ const insights={balance:'The dataset is imbalanced: approximately 6.5% of records are labelled diabetic. This is why accuracy alone is not enough to judge a screening model.',features:'The 14 input features include age, gender, pulse rate, systolic and diastolic blood pressure, glucose, height, weight, BMI, family history and selected health conditions.',workflow:'The notebook cleans and imputes selected zero values, uses a stratified 80/20 train-test split, standardises features, then compares logistic regression, RFE-selected logistic regression and a neural network.'};
+ document.querySelectorAll('[data-insight]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-insight]').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');detail.textContent=insights[b.dataset.insight]}));
+ const bars=document.querySelectorAll('[data-width]');if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('[data-width]').forEach(x=>x.style.width=x.dataset.width+'%');io.unobserve(e.target)}}),{threshold:.2});const lab=$('datasetLab');if(lab)io.observe(lab)}else bars.forEach(x=>x.style.width=x.dataset.width+'%');
+ const reveal=document.querySelectorAll('.reveal');if('IntersectionObserver' in window){const ro=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target)}}),{threshold:.12});reveal.forEach(x=>ro.observe(x))}else reveal.forEach(x=>x.classList.add('visible'));
+ const top=document.createElement('button');top.className='back-top';top.type='button';top.textContent='↑';top.setAttribute('aria-label','Back to top');document.body.appendChild(top);top.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));window.addEventListener('scroll',()=>top.classList.toggle('show',window.scrollY>500),{passive:true});
+})();
+</script>
+
+</body>
+</html>
